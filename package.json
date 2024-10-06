@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:database; npm run build:docker",
-    "build:docker": "docker build --tag erpmicroservices.org/authorization_server-database:$npm_package_version --tag erpmicroservices.org/authorization_server-database:latest --rm .",
+    "build:docker": "docker build --tag erpmicroservices/authorization_server-database:$npm_package_version --tag erpmicroservices/authorization_server-database:latest --rm .",
     "build:database": "mkdir -p build;liquibase --changeLogFile=./database_change_log.yml --url='offline:postgresql' updateSql > build/database_up.sql",
     "clean": "rm -rf build; rm -rf generated-sql;yes | docker rmi  --force erpmicroservices/authorization_server-database; yes | docker volume prune; docker rm authorization_server-database",
     "update_database": "liquibase-3.5.3-bin/liquibase --changeLogFile=./database_change_log.yml --url='jdbc:postgresql://localhost/people_and_organizations' --username=people_and_organizations --password=people_and_organizations update",
