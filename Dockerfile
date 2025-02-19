@@ -1,6 +1,6 @@
 FROM postgres:17
 
-ENV POSTGRES_DB=authorization_service-db
+ENV POSTGRES_DB=authorization_service
 ENV POSTGRES_USER=authorization_service
 ENV POSTGRES_PASSWORD=authorization_service
 
